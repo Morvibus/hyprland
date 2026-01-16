@@ -1,0 +1,51 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+window {
+    width:            500px;
+    height:           450px;
+    border:           2px;
+    border-radius:    15px;
+    border-color:     @color2;
+    background-color: @background;
+}
+
+mainbox {
+    children: [ "inputbar", "listview" ];
+    background-color: transparent;
+}
+
+inputbar {
+    children: [ "prompt", "entry" ];
+    padding: 10px;
+    background-color: transparent;
+}
+
+prompt {
+    text-color: @color2;
+    padding: 0 10px;
+}
+
+entry {
+    text-color: @foreground;
+    placeholder: "Escribir aquí...";
+}
+
+listview {
+    layout: vertical; /* Cambiado a vertical */
+    padding: 10px;
+    columns: 1;
+    lines: 8;
+    background-color: transparent;
+}
+
+element {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+element selected {
+    background-color: @color2;
+    text-color: @background;
+}
+
+element-icon { size: 0px; } /* No necesitamos iconos grandes aquí */

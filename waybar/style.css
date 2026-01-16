@@ -1,0 +1,40 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+    font-family: "CaskaydiaCove Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: transparent; /* Fondo transparente para estilo flotante */
+    color: @foreground;
+}
+
+#workspaces, #clock, #battery, #pulseaudio, #network {
+    background-color: rgba(30, 30, 46, 0.5); /* Fondo oscuro semi-transparente */
+    border: 2px solid @color2; /* Borde dinámico con Pywal */
+    border-radius: 15px;
+    padding: 0px 15px;
+    margin: 5px 3px;
+}
+
+#workspaces button.active {
+    color: @color1;
+    border-bottom: 3px solid @color1;
+}
+
+#language {
+    background-color: rgba(30, 30, 46, 0.5);  /* Color de acento de Pywal */
+    padding: 0 10px;
+    margin: 4px 2px;
+    border: 2px solid @color2;
+    border-radius: 10px;
+}
+
+#battery {
+    /* Aquí añadimos las fuentes Nerd Font explícitamente */
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono", sans-serif;
+    font-size: 16px; /* Ajusta el tamaño para que el corazón se vea bien */
+    color: @foreground;
+    padding: 0 10px;
+}

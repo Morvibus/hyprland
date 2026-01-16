@@ -1,0 +1,73 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+    main-bg: @background;
+    main-fg: @foreground;
+    select-bg: @color2;
+    select-fg: @background;
+}
+
+window {
+    width:            900px;
+    height:           300px;
+    anchor:           center;
+    location:         center;
+    enabled:          true;
+    border:           2px;
+    border-radius:    20px;
+    border-color:     @select-bg;
+    background-color: @main-bg;
+}
+
+mainbox {
+    enabled:          true;
+    spacing:          0em;
+    padding:          0em;
+    orientation:      vertical;
+    children:         [ "listview" ]; /* Solo la lista para que sea limpio */
+    background-color: transparent;
+}
+
+listview {
+    enabled:          true;
+    padding:          20px;
+    columns:          1;
+    lines:            5;
+    layout:           horizontal; /* Esto lo hace horizontal */
+    cycle:            true;
+    scrollbar:        false;
+    background-color: transparent;
+    fixed-height:     true;
+}
+
+element {
+    enabled:          true;
+    padding:          20px;
+    margin:           10px;
+    cursor:           pointer;
+    background-color: transparent;
+    border-radius:    15px;
+    orientation:      vertical; /* Icono arriba, texto abajo */
+    width:            150px;
+}
+
+element selected {
+    background-color: @select-bg;
+    text-color:       @select-fg;
+}
+
+element-icon {
+    size:             100px;
+    cursor:           inherit;
+    horizontal-align: 0.5;
+    background-color: transparent;
+}
+
+element-text {
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+    cursor:           inherit;
+    background-color: transparent;
+    text-color:       inherit;
+}
+

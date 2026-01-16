@@ -1,0 +1,47 @@
+{
+    "layer": "top",
+    "position": "top",
+    //"margin-top": 0,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/language", "network", "battery"],
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "return-type": "json",
+        	        "exec-if": "which swaync-client",
+        	        "exec": "swaync-client -swb",
+        	        "on-click": "swaync-client -t -sw",
+        	        "on-click-right": "swaync-client -d -sw",
+        	        "escape": true
+    },
+	    
+    "network": {
+        "format-wifi": "{essid} ",
+        "format-ethernet": "Conectado ",
+        "format-disconnected": "Desconectado ⚠",
+        "on-click": "kitty -e nmtui" // Abre el selector de WiFi en una terminal pequeña
+    },
+
+   "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󱐋",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰯈", "󰣐", "󰊠"], // Corazón roto, corazón medio, corazón lleno
+        "on-click": "notify-send 'Estado de batería' '$(acpi -b)'"
+    },
+    
+    "hyprland/language": {
+        "format": "<span> </span> {}",
+        "format-en": "US",
+        "format-es": "ES",
+        "on-click": "hyprctl switchxkblayout current next" // Opcional: cambia el idioma al hacer clic
+    }
+}
+
