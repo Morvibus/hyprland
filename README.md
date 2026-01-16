@@ -1,6 +1,6 @@
 # Morvibus Dotfiles - Hyprland
 
-Mi configuración personal de Arch Linux + Hyprland.
+Mi configuración personal de Arch Linux + Hyprland. (Proyecto en proceso)
 
 ## 🛠️ Herramientas
 * **WM:** [Hyprland](https://hyprland.org/)
